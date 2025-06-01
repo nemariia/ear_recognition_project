@@ -48,25 +48,23 @@ model = Sequential([
     Input(shape=(128, 128, 1)),
     Conv2D(16, kernel_size=(2, 2), strides=1, activation='relu'),
     MaxPooling2D(pool_size=(2, 2), strides=2),
-    MaxPooling2D(pool_size=(2, 2)),
 
     Conv2D(32, kernel_size=(2, 2), strides=1, activation='relu'),
-    MaxPooling2D(pool_size=(2, 2)),
+    MaxPooling2D(pool_size=(2, 2), strides=2),
 
     Conv2D(64, kernel_size=(2, 2), strides=1, activation='relu'),
-    MaxPooling2D(pool_size=(2, 2)),
+    MaxPooling2D(pool_size=(2, 2), strides=2),
 
     Flatten(),
 
     Dense(500, activation='relu'),
-    # Dropout(0.4),
     Dense(13, activation='softmax')
 ])
 
 
 model.compile(
     optimizer='adam',
-    loss='categorical_crossentropy',  # Use sparse_categorical_crossentropy if labels are integers
+    loss='categorical_crossentropy',
     metrics=['accuracy']
 )
 
@@ -85,7 +83,7 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
 plt.grid(True)
-plt.savefig('plots/accuracy.png')  # Save to file
+plt.savefig('plots/accuracy.png')
 
 plt.figure()
 plt.plot(history.history['loss'], label='Training Loss')
