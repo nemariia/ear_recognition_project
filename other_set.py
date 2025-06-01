@@ -50,10 +50,10 @@ model = Sequential([
     MaxPooling2D(pool_size=(2, 2), strides=2),
 
     Conv2D(32, kernel_size=(2, 2), strides=1, activation='relu'),
-    MaxPooling2D(pool_size=(2, 2)),
+    MaxPooling2D(pool_size=(2, 2), strides=2),
 
     Conv2D(64, kernel_size=(2, 2), strides=1, activation='relu'),
-    MaxPooling2D(pool_size=(2, 2)),
+    MaxPooling2D(pool_size=(2, 2), strides=2),
 
     Flatten(),
 
