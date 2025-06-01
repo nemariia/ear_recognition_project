@@ -59,18 +59,17 @@ model = Sequential([
     Flatten(),
 
     Dense(500, activation='relu'),
-    # Dropout(0.4),
     Dense(164, activation='softmax')
 ])
 
 model.compile(
     optimizer='adam',
-    loss='categorical_crossentropy',  # Use sparse_categorical_crossentropy if labels are integers
+    loss='categorical_crossentropy',
     metrics=['accuracy']
 )
 
-history = model.fit(train_data, validation_data=val_data, epochs=50)
-model.save('ear_cnn_model_updated.keras')
+history = model.fit(train_data, validation_data=val_data, epochs=100)
+model.save('ear_cnn_EarVN1.0.keras')
 
 loss, accuracy = model.evaluate(test_data)
 print(f"Test Accuracy: {accuracy * 100:.2f}%")
@@ -84,7 +83,7 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
 plt.grid(True)
-plt.savefig('accuracy.png')  # Save to file
+plt.savefig('plots/accuracy_other.png')
 
 plt.figure()
 plt.plot(history.history['loss'], label='Training Loss')
@@ -94,4 +93,4 @@ plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
 plt.grid(True)
-plt.savefig('loss.png')
+plt.savefig('plots/loss_other.png')

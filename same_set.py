@@ -85,7 +85,7 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
 plt.grid(True)
-plt.savefig('accuracy.png')  # Save to file
+plt.savefig('plots/accuracy.png')  # Save to file
 
 plt.figure()
 plt.plot(history.history['loss'], label='Training Loss')
@@ -95,4 +95,4 @@ plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
 plt.grid(True)
-plt.savefig('loss.png')
+plt.savefig('plots/loss.png')
