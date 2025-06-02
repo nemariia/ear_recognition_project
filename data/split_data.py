@@ -1,4 +1,8 @@
+import sys
 import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import shutil
 import random
 
@@ -28,4 +32,4 @@ def split_dataset(source, train, val, test, train_split=0.7, val_split=0.2):
             os.makedirs(os.path.join(dst_dir, class_name), exist_ok=True)
             shutil.copy(os.path.join(src_class, file), os.path.join(dst_dir, class_name, file))
 
-split_dataset('EarVN1.0/Images', 'EarVN1.0/train', 'EarVN1.0/val', 'EarVN1.0/test')
+split_dataset('data/EarVN1.0/Images', 'data/EarVN1.0/train', 'data/EarVN1.0/val', 'data/EarVN1.0/test')
