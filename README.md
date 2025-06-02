@@ -20,19 +20,23 @@ Two datasets were used:
 1. **Kaggle Dataset** (13 classes)  
    - Used for baseline testing
    - Structure: `train/`, `validation/`, `test/` folders each containing 13 class directories
-   - Available from https://www.kaggle.com/datasets/omarhatif/datasets-for-ear-detection-and-recognition 
+   - 📎 [Dataset on Kaggle](https://www.kaggle.com/datasets/omarhatif/datasets-for-ear-detection-and-recognition)
 
 2. **EarVN1.0** (164 classes)  
    - Used for extended evaluation
    - Contains 164 classes
-   - Available from https://doi.org/10.17632/yws3v3mwx3.4
+   - 📎 [EarVN1.0 on Mendeley](https://doi.org/10.17632/yws3v3mwx3.4)
 
 ## 📦 Requirements
+
+I used Python 3.10.0 to ensure compatibility with all the components (Tensorflow, Keras).
 
 Install dependencies in a virtual environment:
 
 ```
 python -m venv .venv
+or
+python3.x -m venv .venv
 source .venv/bin/activate
 or on Windows:
 .venv\Scripts\activate
@@ -46,3 +50,13 @@ python same_set.py
 ...
 python other_set.py
 ```
+
+## 📊My Results So Far
+
+For the base dataset:
+![accuracy](https://github.com/user-attachments/assets/ee2c1ed9-1c8f-4e99-8221-00541665f23d)
+
+For the EarVN1.0 dataset:
+![accuracyEarVN1 0](https://github.com/user-attachments/assets/4f315513-13bd-43b2-93f3-211bba6c324a)
+
+The model is clearly struggling to generalize for 164 classes. Further architecture improvement is needed.
