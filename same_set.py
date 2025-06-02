@@ -2,17 +2,17 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Input, Conv2D, MaxPooling2D, Dense, Dropout, Flatten
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-import matplotlib.pyplot as plt
+import plot_results as p
 
 
 # Data generators
 train_gen = ImageDataGenerator(rescale=1./255,
-                                rotation_range=15,
-                                width_shift_range=0.1,
-                                height_shift_range=0.1,
-                                shear_range=0.1,
-                                zoom_range=0.1,
-                                horizontal_flip=True)
+    rotation_range=15,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    shear_range=0.1,
+    zoom_range=0.1,
+    horizontal_flip=True)
 
 val_test_gen = ImageDataGenerator(rescale=1./255)
 
@@ -74,23 +74,4 @@ model.save('ear_cnn_model.keras')
 loss, accuracy = model.evaluate(test_data)
 print(f"Test Accuracy: {accuracy * 100:.2f}%")
 
-# Plot Accuracy
-plt.figure()
-plt.plot(history.history['accuracy'], label='Training Accuracy')
-plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
-plt.title('Model Accuracy Over Epochs')
-plt.xlabel('Epoch')
-plt.ylabel('Accuracy')
-plt.legend()
-plt.grid(True)
-plt.savefig('plots/accuracy.png')
-
-plt.figure()
-plt.plot(history.history['loss'], label='Training Loss')
-plt.plot(history.history['val_loss'], label='Validation Loss')
-plt.title('Model Loss Over Epochs')
-plt.xlabel('Epoch')
-plt.ylabel('Loss')
-plt.legend()
-plt.grid(True)
-plt.savefig('plots/loss.png')
+p.plot_results(history, 'plots', 'accuracy.png', 'loss.png')
