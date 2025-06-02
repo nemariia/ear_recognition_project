@@ -5,12 +5,13 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from data.gen_subsets import gen_subsets as data
 import plots.plot_results as p
-from models.model import cnn_h_m_s
+from models.model import EarRecognitionModel
 
 
 train_data, val_data, test_data = data('data/EarVN1.0/train', 'data/EarVN1.0/val', 'data/EarVN1.0/test')
 
-model = cnn_h_m_s(164)
+model_builder = EarRecognitionModel(n_classes=164)
+model = model_builder.cnn_h_m_s()
 
 history = model.fit(train_data, validation_data=val_data, epochs=100)
 model.save('models/ear_cnn_EarVN1.0.keras')
