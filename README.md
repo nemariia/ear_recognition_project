@@ -62,9 +62,13 @@ python other_set.py
 ## 📊My Results So Far
 
 For the base dataset:
+
 ![accuracy](https://github.com/user-attachments/assets/ee2c1ed9-1c8f-4e99-8221-00541665f23d)
 
 For the EarVN1.0 dataset:
+
 ![accuracyEarVN1 0](https://github.com/user-attachments/assets/4f315513-13bd-43b2-93f3-211bba6c324a)
+
+
 
 The model is clearly struggling to generalize for 164 classes. Further architecture improvement is needed.
