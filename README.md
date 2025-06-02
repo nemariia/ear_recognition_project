@@ -35,11 +35,19 @@ Install dependencies in a virtual environment:
 
 ```
 python -m venv .venv
+```
 or
+```
 python3.x -m venv .venv
+```
+```
 source .venv/bin/activate
+```
 or on Windows:
+```
 .venv\Scripts\activate
+```
+```
 pip install -r requirements.txt
 ```
 
