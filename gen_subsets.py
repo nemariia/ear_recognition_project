@@ -1,5 +1,10 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
+'''
+Generate training, validation, and testing subsets.
+All the images are resized to 128x128 and converted into grayscale.
+The training subset is also augmented.
+'''
 def gen_subsets(train_folder, val_folder, test_folder):
     train_gen = ImageDataGenerator(rescale=1./255,
         rotation_range=15,

@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import os
 
+'''
+Plot and save the training and validation accuracy and loss
+'''
 def plot_results(history, plots_folder, accuracy_name, loss_name):
     accuracy_path = os.path.join(plots_folder, accuracy_name)
     loss_path = os.path.join(plots_folder, loss_name)
