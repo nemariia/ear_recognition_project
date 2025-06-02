@@ -54,10 +54,18 @@ pip install -r requirements.txt
 ## 🚀 Train the Model
 
 ```
-python same_set.py
+python training/same_set.py
 ...
-python other_set.py
+python training/other_set.py
 ```
+
+## 🧪 Evaluate the Model
+
+```
+python evaluation/main.py
+```
+
+It will make a prediction for a random image from both datasets.
 
 ## 📊 My Results So Far
 
