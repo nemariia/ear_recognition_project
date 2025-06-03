@@ -80,3 +80,10 @@ For the EarVN1.0 dataset:
 
 
 The model is clearly struggling to generalize for 164 classes. Further architecture improvement is needed.
+
+I tried to build another model, and it produced slightly better results:
+
+![accuracy_deep_cnn_with_dropout_EarVN1 0](https://github.com/user-attachments/assets/1a86ac9c-1b4f-40d0-96ae-eb7374853f92)
+
+
+However, after 30 epochs it struggles to learn, and the training accuracy increases without the increase in the validation accuracy.
